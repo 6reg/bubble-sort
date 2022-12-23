@@ -1,24 +1,24 @@
 def stock_picker prices
-  min_p = prices[0]
-  min_i = 0
+  # create vars for max_profit and result arr
+  max_profit = 0
+  result = []
+  
+  # loop through prices
+  prices.each_with_index do |low, i|
+  # # nested loop through prices
+    prices.each_with_index do |high, j|
+      # profit = p2 - p1
+      profit = high - low
 
-  profit = 0
-  days = [0, 0]
-
-  prices.each_with_index do |p, i|
-    if p < min_p
-      min_p = p
-      min_i = i
-      next
-    end
-
-    if p - min_p > profit
-      profit=p-min_p
-      days=[min_i, i]
+    # if profit > max_profit and buy index before sell index
+    if profit > max_profit and i < j
+      max_profit = profit
+      result = [i,j]
     end
 
   end
-  return days
-end
 
-puts stock_picker [17,3,6,9,15,8,6,1,10]
+  end
+  p result
+end
+stock_picker [17,3,6,9,15,8,6,1,10]
