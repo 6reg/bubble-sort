@@ -1,10 +1,10 @@
-# Sub Strings
-This Ruby method looks at a string parameter and counts occurrences of elements from an array parameter. The occurances of each element are counted and returned in a hash.
+# Stock Picker
+This Ruby method takes an array of 'daily stock prices' and returns an array of the indices of the best day to buy and best day to sell for maximum profit. 
 
 #### Parameters
-String, Array
+Array
 
 #### Returns
-Hash
+Array
 
 
